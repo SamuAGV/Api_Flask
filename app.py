@@ -1,6 +1,6 @@
 from flask import Flask
 from controllers.HomeController import blueprint_home
-from extensions import db,migrate
+from extensions import db,migrate, swagger
 from config import Config
 from controllers.UserController import user_bp
 
@@ -8,6 +8,8 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
     db.init_app(app)
+    swagger.init_app(app)  # <--- Esto monta Swagger en /apidocs
+
     migrate.init_app(app, db)
     app.register_blueprint(user_bp,url_prefix='/api/auth')
     app.register_blueprint(blueprint_home,url_prefix='/api/v1')

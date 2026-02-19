@@ -14,9 +14,15 @@ class User(db.Model):
         password_encode = password.encode('utf-8')[:72]
         self.password = pbkdf2_sha256.hash(password_encode)
     
+    def check_password(self, password :str) -> bool:
+        #return bcrypt.verify(password)
+        password_encode = password.encode('utf-8')[:72]
+        self.password = pbkdf2_sha256.hash(password_encode)
+
     def to_dict(self):
         return {
             'id': self.id,
             'username': self.username,
             'email': self.email
         }
+        
