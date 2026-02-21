@@ -1,4 +1,4 @@
-# API ING 82
+# API FLASK
 
 API REST desarrollada con **Flask** para la gestión de autenticación de usuarios mediante **JWT**, documentación interactiva con **Swagger (Flasgger)** y control de base de datos con **Flask-Migrate**.
 
