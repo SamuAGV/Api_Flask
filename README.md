@@ -152,6 +152,3 @@ Proyecto desarrollado como práctica académica para la materia de ingeniería d
 
 ---
 
-## 📄 Licencia
-
-Uso académico y educativo.
