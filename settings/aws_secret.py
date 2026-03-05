@@ -3,7 +3,6 @@ import json
 from botocore.exceptions import ClientError
 
 class AwsSecretManager:
-
     def __init__(self):
         print("inicio")
         self.client = boto3.client('secretsmanager')
@@ -18,3 +17,5 @@ class AwsSecretManager:
             return json.loads(secret_string)
         except ClientError as e:
             raise Exception(f"Error: {str(e)}")
+
+awssecret = AwsSecretManager()

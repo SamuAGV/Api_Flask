@@ -3,7 +3,7 @@ from controllers.HomeController import blueprint_home
 from extensions import db,migrate,swagger,jwt
 from config import Config
 from controllers.UserController import user_bp
-from settings.aws_secret import awssecret, AwsSecretManager
+from settings.aws_secret import AwsSecretManager
 
 def create_app():
     app = Flask(__name__)
@@ -16,7 +16,7 @@ def create_app():
     app.register_blueprint(blueprint_home,url_prefix='/api/v1')
     
     awssecret = AwsSecretManager()
-    secret = awssecret.get_secret('api_82')
+    secret = awssecret.get_secret('Api_82')
     print(secret)
 
     @app.route('/')
